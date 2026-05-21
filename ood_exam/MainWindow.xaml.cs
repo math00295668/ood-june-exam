@@ -1,4 +1,5 @@
 ﻿using ood_june_exam.Data;
+using System;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -37,7 +38,8 @@ namespace ood_june_exam
         public void ListBoxMembers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var SelectedMember = ListBoxMembers.SelectedItem as Member;
-            if (SelectedMember != null) {
+            if (SelectedMember != null)
+            {
                 using (var db = new ClubData())
                 {
                     ListBoxSessions.ItemsSource = db.TrainingSessions
@@ -68,6 +70,6 @@ namespace ood_june_exam
             {
                 MessageBox.Show("couldnt open the window");
             }
-        } 
+        }
     }
 }
